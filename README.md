@@ -1,7 +1,6 @@
 # Smart Fridge Food Classifier — COMP3330/6380 Assessment 1
 
-Deep learning classifier for 40 food item classes using EfficientNet-B0 with
-transfer learning and data augmentation.
+Deep learning classifier for 40 food item classes using EfficientNet-B0 with transfer learning and data augmentation.
 
 ---
 
@@ -30,6 +29,7 @@ pip install -r requirements.txt
 comp3330-assignment/
 ├── datasets/
 │   └── FoodTest1/            # 143 provided images (flat, NN_ClassName_XXX.JPG)
+│   └── FoodTest1_expanded/   # 10,394 manually gathered training images (flat, NN_ClassName_XXX.JPG)
 ├── data/
 │   ├── raw/                  # additional downloaded images (one subdir per class)
 │   └── noise_examples/       # Noise1/2/3 flat folders from Canvas (optional)
@@ -98,13 +98,13 @@ Overall Acc:     78.57%
 
 ## Training
 
-### 1. Use FoodTest1 only (minimum setup)
+### 1. Use FoodTest1_expanded only (minimum setup)
 
 ```bash
 python train.py
 ```
 
-This trains on the 143 images in `datasets/FoodTest1` with an 80/20 train/val
+This trains on the 10,394 images in `datasets/FoodTest1_expanded` with an 80/20 train/val
 split and heavy data augmentation.
 
 ### 2. With additional structured data (recommended)
